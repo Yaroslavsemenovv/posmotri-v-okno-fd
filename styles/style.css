@@ -8,7 +8,12 @@ html {
   block-size: 100%;
 }
 
+/* Если будут проблемы с perfect-pixel, подскажите пожалуйста какие именно */
+
 .page {
+  display:flex;
+  justify-content:center;
+  align-items:center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -16,6 +21,122 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+}
+
+.content {
+  display:flex;
+  align-items:flex-end;
+  width:1140px;
+  height:534px;
+  gap:30px;
+}
+
+.result {
+  width:711px;
+  height:456px;
+  display:flex;
+  flex-direction:column;
+}
+
+.result__video-container {
+  position: relative;
+  width:711px;
+  height:386px;
+}
+
+.result__video {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.search-form {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-top:16px;
+}
+
+.content__list-container {
+  position: relative;
+  display:grid;
+  gap:30px;
+  width:400px;
+  height:534px;
+  overflow:auto;
+  margin-top:26px;
+
+}
+
+.content__list {
+  display:grid;
+  gap:30px;
+}
+
+.content__details {
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+}
+
+.content__video-card {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+}
+
+.content__video-card-description-container {
+  flex-grow:1;
+
+}
+
+.content__video-card-thumbnail {
+  width:194px;
+  min-height:103px;
+  object-fit:contain;
+  object-position:left;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-weight:700;
+  font-size:75px;
+  text-transform:uppercase;
+  line-height: 0.9;
+}
+
+.content__accent {
+  color:#545050;
+}
+
+.content__card-link {
+  text-decoration:none;
+  color:#ffff;
+}
+
+.content__video-card-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight:700;
+  font-size:30px;
+  text-transform:uppercase;
+  white-space: nowrap;
+  overflow: hidden;        
+  text-overflow: ellipsis;
+  width:196px;  
+}
+
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight:400;
+  font-size:18px;
+}
+
+.content__video-card-description {
+  line-clamp:1;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
 }
 
 h1,
@@ -48,4 +169,146 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-form__checkbox-list {
+  display:flex;
+  gap:15px;
+}
+
+.search-form__fieldset {
+  border:none;
+}
+
+.search-form__label {
+  display:flex;
+  align-items:center;
+  width: fit-content;
+  gap:5px;
+  margin-top:5px;
+}
+
+input {
+  cursor: pointer;
+  width:255px;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight:400;
+  font-size:18px;
+  border:none;
+  border-top:2px solid #FFFFFF;
+  border-bottom:2px solid #FFFFFF;
+  background-color:transparent;
+  appearance: none;
+  color:white;
+}
+
+.search-form__textfield::placeholder {
+  color:rgb(255 255 255 / 0.7);
+}
+
+input:has(:focus-visible) {
+  outline:1px solid #FFFFFF;
+
+}
+
+.search-form__label:has(:focus-visible) {
+  outline:1px solid #FFFFFF;
+}
+
+.search-form__pseudo-checkbox {
+  cursor: pointer;
+  width:19px;
+  height:19px;
+  border:1px solid #FFFFFF;
+  margin:1px;
+}
+
+.search-form_pseudo-checkbox::after {
+  content: "";
+  display: block;
+  background-color:#FFFFFF;
+  width:100%;
+  height:100%;
+  opacity: 0;
+}
+
+.search-form_checkbox:checked + .search-form_pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__label-text:hover {
+  text-decoration:underline;
+}
+
+.button {
+  cursor: pointer;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight:700;
+  font-size:18px;
+  background-color:transparent;
+  color:#FFFFFF;
+  border:1px solid #FFFFFF;
+}
+
+.search-form__submit-button {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  align-self: flex-end;
+  width:194px;
+  height:34px;
+}
+
+.more-button {
+  width:100%;
+  height:100%;
+}
+
+.button:hover {
+   text-decoration:underline;
+}
+
+.button:active {
+  background-color:#545050;
+}
+
+.button:focus-visible {
+  outline:1px solid #FFFFFF;
+}
+
+.content__card-link {
+  display:block;
+}
+
+.content__card-link_current {
+  background-color:transparent;
+}
+
+.content__card-link:hover {
+  text-decoration:underline;
+}
+
+.content__card-link:active {
+  background-color:#545050;
+  text-decoration:none;
+}
+
+.content__card-link:has(:focus-visible) {
+  border:none;
+  outline:1px solid #FFFFFF;
+}
+
+.content__list-item {
+  padding-left:3px;
+  padding-right:3px;
 }
